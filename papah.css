@@ -1,0 +1,92 @@
+*,
+html {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #555;
+    margin: 0; /* Reset default margin */
+    padding: 0; /* Reset default padding */
+}
+
+.container-navbar {
+    background-color: #333;
+    width: 265px; /* Lebar navbar */
+    height: 100vh; /* Gunakan tinggi viewport untuk mengisi seluruh ketinggian layar */
+    position: fixed; /* Tetapkan posisi tetap agar tetap terlihat saat di-scroll */
+    top: 0;
+    left: 0;
+}
+
+.ul-navbar {
+    display: flex;
+    flex-direction: column; /* Ubah arah tata letak menjadi vertikal */
+    justify-content: flex-start; /* Atur tata letak agar dimulai dari atas */
+    align-items: center;
+    height: 100%;
+    padding-top: 20px; /* Beri jarak dari atas */
+}
+
+.li-navbar {
+    list-style-type: none;
+    padding: 30px; /* Ubah padding agar lebih padat */
+    color: white;
+    margin: 5px;
+    font-size: 10px;
+    width: 100%; /* Lebar elemen 100% agar memenuhi container */
+    text-align: center; /* Tengahkan teks */
+}
+
+.li-navbar:hover {
+    background-color: tomato;
+    transition: .4s ease-in-out;
+    transition-delay: .2s;
+    border-radius: 8px;
+}
+
+.tableborder {
+    text-align: center;
+    align-content: center;
+}
+
+.a-navbar {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+/* Tambahkan class untuk konten di sebelah kanan navbar */
+.content {
+    margin-left: 250px; /* Sesuaikan dengan lebar navbar */
+    padding: 20px;
+}
+.judul {
+    text-align: center; /* Tengahkan judul */
+   
+    font-size: 40px; /* Ukuran font judul */
+    background-color: #333;
+    color: aliceblue;
+
+}
+
+tBody{
+    width: 80%;
+}
+.dark-theme {
+    background-color: #333; /* Warna latar belakang gelap */
+    color: #fff; /* Warna teks putih */
+    padding: 10px; /* Padding untuk tampilan sel */
+  }
+  
+  /* Gaya untuk tautan (link) */
+  .dark-theme a {
+    color: #00bcd4; /* Warna tautan biru terang */
+    text-decoration: none; /* Hilangkan garis bawah default pada tautan */
+    margin-right: 10px; /* Jarak antara tautan */
+  }
+  
+  /* Gaya untuk tautan (link) saat dihover */
+  .dark-theme a:hover {
+    text-decoration: underline; /* Garis bawah saat dihover */
+  }
