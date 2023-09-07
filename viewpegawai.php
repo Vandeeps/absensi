@@ -31,7 +31,7 @@
       <a href="tambahpegawai.php" class="a-navbar">TAMBAH DATA PEGAWAI</a>
       </li>
       <li class="li-navbar">
-        <a href="databesen.php" class="a-navbar">ABSENSI</a>
+        <a href="viewabsen.php" class="a-navbar">ABSENSI</a>
       </li>
       <li class="li-navbar">
         <a href="absensi.php" class="a-navbar">ISI DAFTAR HADIR</a>
@@ -112,8 +112,7 @@
       </tbody>
   </table>
 </div>
-  
-  <!-- TABEL VIEW DONE -->
+
 
 
 </body>
