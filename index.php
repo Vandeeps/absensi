@@ -67,7 +67,7 @@
         <a href="viewabsen.php" class="a-navbar">ABSENSI</a>
       </li>
       <li class="li-navbar">
-        <a href="absensi.php" class="a-navbar">ISI DAFTAR HADIR</a>
+        <a href="tambahabsen.php" class="a-navbar">ISI DAFTAR HADIR</a>
       </li>
       <li class="li-navbar">
         <a href="#" class="a-navbar">DATA LAPORAN KERJA</a>
