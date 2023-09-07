@@ -5,7 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UBAH DATA</title>
-    <link rel="stylesheet" href="adek.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="icon.jpg">
     <style>
   body {
       background-image: url('nc.jpg'); /* Ganti dengan path gambar Anda */
@@ -174,8 +175,8 @@ button[type="button"]:hover {
                 <td><input type="text" name="hp" maxlength="100" value="<?php echo $data['hp']?>"></td>
             </tr>
             <tr>
-                <td><input type="submit" value="Ubah"></td>
-                <td><input type="button" value="Kembali" onclick="history.go(-1);"></td>
+                <td><input class="button-simpan" type="submit" value="Ubah"></td>
+                <td><input class="button-kembali" type="button" value="Kembali" onclick="history.go(-1);"></td>
             </tr>
     </table>
     </form>

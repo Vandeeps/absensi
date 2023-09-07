@@ -5,7 +5,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>DATA PEGAWAI</title>
-  <link rel="stylesheet" href="adek.css" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" type="image/png" href="icon.jpg">
   <style>
   body {
       background-image: url('nc.jpg'); /* Ganti dengan path gambar Anda */
@@ -34,7 +35,7 @@
         <a href="viewabsen.php" class="a-navbar">ABSENSI</a>
       </li>
       <li class="li-navbar">
-        <a href="absensi.php" class="a-navbar">ISI DAFTAR HADIR</a>
+        <a href="tambahabsen.php" class="a-navbar">ISI DAFTAR HADIR</a>
       </li>
       <li class="li-navbar">
         <a href="laporan.php" class="a-navbar">DATA LAPORAN KERJA</a>

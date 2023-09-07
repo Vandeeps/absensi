@@ -4,8 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TAMBAH DATA</title>
-    <link rel="stylesheet" href="adek.css">
+    <title>DAFTAR HADIR</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="icon.jpg">
+
     <style>
   body {
       background-image: url('nc.jpg'); /* Ganti dengan path gambar Anda */
@@ -51,7 +53,8 @@
       width: 800px;
       margin: 0 auto;  
       margin-top:20px;
-      margin-left:300px;    
+      margin-left:300px;   
+      margin-bottom: 20px; 
       padding: 125px;
       border: 1px solid #ccc;
       background-color: #333;
@@ -121,22 +124,6 @@ input[type="text"] {
     width: 100%;
 }
 
-button[type="submit"],
-button[type="button"] {
-    background-color: #007bff; 
-    color: #fff; 
-    border: none;
-    padding: 10px 20px;
-    margin-right: 10px; 
-    cursor: pointer;
-}
-
-
-button[type="submit"]:hover,
-button[type="button"]:hover {
-    background-color: #0056b3; 
-}
-
 select {
   width: 100%; 
   padding: 10px; 
@@ -166,27 +153,37 @@ select:disabled {
 
 <body>
 
-  <form action="procpegawai.php" method="post">
-  <h2 class="semijudul" align="center">MASUKAN DATA PEGAWAI</h2>
+<?php 
+
+include "koneksi.php";
+
+$nip = @$_GET['NIP'] ?? '';
+
+$data = mysqli_fetch_assoc(mysqli_query($koneksi, "select * from data_karyawan where NIP = '$nip'"));
+
+?>
+
+  <form action="procabsen.php" method="post">
+  <h2 class="semijudul" align="center">ISI DAFTAR HADIR</h2>
     <table>
     
       <tbody>
         <tr>
           <td>No</td>
-          <td><input type="text" name="NIP"></td>
+          <td><input type="text" name="No"></td>
         </tr>
         <tr>
             <td>NIP</td>
-            <td><select name="NIP">
+            <td><select name="NIP" onchange="changeNIP(this)">
                 <option>--PILIH--</option>
                 <?php
-                include "koneksi.php";
+                
                 $jurusan = "SELECT * FROM data_karyawan";
                 $sql_jurusan = mysqli_query($koneksi, $jurusan);
                 while ($data_jurusan = mysqli_fetch_array($sql_jurusan)) {
                     $i++;
                 ?>
-                    <option value="<?php echo $data_jurusan['NIP']; ?>">
+                    <option value="<?php echo $data_jurusan['NIP']; ?>"  <?= $nip == $data_jurusan['NIP'] ? 'selected' : '' ?>>
                         <?php echo $data_jurusan['NIP']; ?>
                     </option>
                 <?php
@@ -197,25 +194,40 @@ select:disabled {
         </tr>
         <tr>
           <td>Nama Pegawai</td>
-          <td><input type="text" name="nama"></td>
-        </tr>
-        <tr>
-          <td>Alamat</td>
-          <td><input type="text" name="alamat"></td>
+          <td><input type="text" name="nama" value="<?php echo @$data['nama'] ?? '' ?>"></td>
         </tr>
         <tr>
           <td>Nomor Telepon</td>
-          <td><input type="text" name="hp"></td>
+          <td><input type="text" name="hp" value="<?php echo @$data['hp'] ?? '' ?>"></td>
+        </tr>
+        <tr>
+          <td>Kehadiran</td>
+            <td><select name="absen" >
+              <option value="Hadir">Hadir</option>
+              <option value="Izin">Izin</option>
+              <option value="Sakit">Sakit</option>
+            </select>
+            </td>
+        </tr>
+        <tr>
+          <td>Keterangan</td>
+          <td><input type="text" name="Ket"></td>
         </tr>
         <tr>
           <td colspan="2">
-            <button type="submit" value="simpan">Simpan</button>
-            <button type="button" value="kembali" onclick="history.go(-1);">Kembali</button>
+            <button class="button-simpan" type="submit" value="simpan">Simpan</button>
+            <button class="button-kembali" type="button" value="kembali" onclick="history.go(-1);">Kembali</button>
           </td>
         </tr>
       </tbody>
     </table>
   </form>
+
+  <script>
+    function changeNIP(ev) {
+      location.href = '?NIP=' + ev.value
+    }
+  </script>
 
      
 

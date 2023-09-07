@@ -4,8 +4,9 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link rel="stylesheet" href="kakak.css" />
+  <title>DATA KEHADIRAN</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" type="image/png" href="icon.jpg">
   <style>
   body {
       background-image: url('nc.jpg'); /* Ganti dengan path gambar Anda */
@@ -105,8 +106,8 @@
                       <td>" . $row[3] . "</td>
                       <td>" . $row[4] . "</td>
                       <td bgcolor='gray'>
-                      <a href='editpegawai.php?NIP=" . $row[0] . "' id='butViewEdit'>Ubah</a>
-                      <a href='procDeletepegawai.php?NIP=" . $row[0] . "' id='butViewDelete'>Hapus</a>
+                      <a href='editpegawai.php?No=" . $row[0] . "' id='butViewEdit'>Ubah</a>
+                      <a href='DeleteAbsen.php?No=" . $row[0] . "' id='butViewDelete'>Hapus</a>
                       </td>
                   </tr>";
                   }

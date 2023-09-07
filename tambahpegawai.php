@@ -5,7 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TAMBAH DATA</title>
-    <link rel="stylesheet" href="adek.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="icon.jpg">
     <style>
   body {
       background-image: url('nc.jpg'); /* Ganti dengan path gambar Anda */
@@ -33,7 +34,7 @@
         <a href="viewabsen.php" class="a-navbar">ABSENSI</a>
       </li>
       <li class="li-navbar">
-        <a href="absensi.php" class="a-navbar">ISI DAFTAR HADIR</a>
+        <a href="tambahabsen.php" class="a-navbar">ISI DAFTAR HADIR</a>
       </li>
       <li class="li-navbar">
         <a href="laporan.php" class="a-navbar">DATA LAPORAN KERJA</a>
@@ -121,23 +122,6 @@ input[type="text"] {
     width: 100%;
 }
 
-button[type="submit"],
-button[type="button"] {
-    background-color: #007bff; 
-    color: #fff; 
-    border: none;
-    padding: 10px 20px;
-    margin-right: 10px; 
-    cursor: pointer;
-}
-
-
-button[type="submit"]:hover,
-button[type="button"]:hover {
-    background-color: #0056b3; 
-}
-
-
   </style>
 </head>
 
@@ -166,8 +150,8 @@ button[type="button"]:hover {
         </tr>
         <tr>
           <td colspan="2">
-            <button type="submit" value="simpan">Simpan</button>
-            <button type="button" value="kembali" onclick="history.go(-1);">Kembali</button>
+          <button class="button-simpan" type="submit" value="simpan">Simpan</button>
+            <button class="button-kembali" type="button" value="kembali" onclick="history.go(-1);">Kembali</button>
           </td>
         </tr>
       </tbody>
