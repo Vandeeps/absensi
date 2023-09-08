@@ -31,10 +31,10 @@
       <a href="tambahpegawai.php" class="a-navbar">TAMBAH DATA PEGAWAI</a>
       </li>
       <li class="li-navbar">
-        <a href="databesen.php" class="a-navbar">ABSENSI</a>
+        <a href="viewabsen.php" class="a-navbar">ABSENSI</a>
       </li>
       <li class="li-navbar">
-        <a href="absensi.php" class="a-navbar">ISI DAFTAR HADIR</a>
+        <a href="tambahabsen.php" class="a-navbar">ISI DAFTAR HADIR</a>
       </li>
       <li class="li-navbar">
         <a href="laporan.php" class="a-navbar">DATA LAPORAN KERJA</a>
@@ -154,7 +154,7 @@ button[type="button"]:hover {
         ?>
 
   <form action="proceditpegawai.php" method="post">
-  <h2 class="semijudul" align="center">GANTI DATA PEGAWAI</h2>
+  <h2 class="semijudul" align="center">UBAH DATA PEGAWAI</h2>
     <table>
     
       <tbody>

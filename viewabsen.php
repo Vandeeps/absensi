@@ -88,6 +88,7 @@
                       <th>NO</th>
                       <th>NIP</th>
                       <th>NAMA PEGAWAI</th>
+                      <th>NOMOR TELEPON</th>
                       <th>KEHADIRAN</th>
                       <th>KETERANGAN</th>
                       <th colspan="2">AKSI</th>
@@ -96,7 +97,7 @@
             <tbody bgcolor="gray" style="text-align: center; width=80% color:white;">
                   <?php
                   include "koneksi.php";
-                  $tampil = mysqli_query($koneksi, "SELECT tb_absen.No, data_karyawan.NIP, data_karyawan.nama, tb_absen.absen,
+                  $tampil = mysqli_query($koneksi, "SELECT tb_absen.No, data_karyawan.NIP, data_karyawan.nama, data_karyawan.hp, tb_absen.absen,
                   tb_absen.ket FROM tb_absen INNER JOIN data_karyawan ON tb_absen.NIP = data_karyawan.NIP");
                   while ($row = mysqli_fetch_array($tampil)) {
                       echo "<tr>
@@ -105,8 +106,9 @@
                       <td>" . $row[2] . "</td> 
                       <td>" . $row[3] . "</td>
                       <td>" . $row[4] . "</td>
+                      <td>" . $row[5] . "</td>
                       <td bgcolor='gray'>
-                      <a href='editpegawai.php?No=" . $row[0] . "' id='butViewEdit'>Ubah</a>
+                      <a href='editabsen.php?No=" . $row[0] . "' id='butViewEdit'>Ubah</a>
                       <a href='DeleteAbsen.php?No=" . $row[0] . "' id='butViewDelete'>Hapus</a>
                       </td>
                   </tr>";

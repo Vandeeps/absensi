@@ -4,10 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DAFTAR HADIR</title>
+    <title>UBAH DATA</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/png" href="icon.jpg">
-
     <style>
   body {
       background-image: url('nc.jpg'); /* Ganti dengan path gambar Anda */
@@ -147,86 +146,57 @@ select:disabled {
 }
 
 
-
   </style>
 </head>
 
 <body>
+<h3 align="center">Ubah Data</h3>
+    <?php
+    include "koneksi.php";
+    if(isset($_GET['No'])){
+    $a = $_GET['No'];
+    $data =  "SELECT * FROM tb_absen WHERE No = '$a'";
+    $sql = mysqli_query($koneksi,$data);
+    while ($data = mysqli_fetch_array($sql)){
+        ?>
 
-<?php 
-
-include "koneksi.php";
-
-$nip = @$_GET['NIP'] ?? '';
-
-$data = mysqli_fetch_assoc(mysqli_query($koneksi, "select * from data_karyawan where NIP = '$nip'"));
-
-?>
-
-  <form action="procabsen.php" method="post">
-  <h2 class="semijudul" align="center">ISI DAFTAR HADIR</h2>
+  <form action="proceditabsen.php" method="post">
+  <h2 class="semijudul" align="center">UBAH DATA ABSEN</h2>
     <table>
     
       <tbody>
-        <tr>
-          <td>No</td>
-          <td><input type="text" name="No"></td>
-        </tr>
-        <tr>
-            <td>NIP</td>
-            <td><select name="NIP" onchange="changeNIP(this)">
-                <option>--PILIH--</option>
-                <?php
-                
-                $jurusan = "SELECT * FROM data_karyawan";
-                $sql_jurusan = mysqli_query($koneksi, $jurusan);
-                while ($data_jurusan = mysqli_fetch_array($sql_jurusan)) {
-                    $i++;
-                ?>
-                    <option value="<?php echo $data_jurusan['NIP']; ?>"  <?= $nip == $data_jurusan['NIP'] ? 'selected' : '' ?>>
-                        <?php echo $data_jurusan['NIP']; ?>
-                    </option>
-                <?php
-                }
-                ?>
-            </select>
-            </td>
-        </tr>
-        <tr>
-          <td>Nama Pegawai</td>
-          <td><input type="text" name="nama" value="<?php echo @$data['nama'] ?? '' ?>"></td>
-        </tr>
-        <tr>
-          <td>Nomor Telepon</td>
-          <td><input type="text" name="hp" value="<?php echo @$data['hp'] ?? '' ?>"></td>
-        </tr>
-        <tr>
-          <td>Kehadiran</td>
-            <td><select name="absen" >
-              <option value="Hadir">Hadir</option>
-              <option value="Izin">Izin</option>
-              <option value="Sakit">Sakit</option>
-            </select>
-            </td>
-        </tr>
-        <tr>
-          <td>Keterangan</td>
-          <td><input type="text" name="Ket"></td>
-        </tr>
-        <tr>
-          <td colspan="2">
-            <button class="button-simpan" type="submit" value="simpan">Simpan</button>
-            <button class="button-kembali" type="button" value="kembali" onclick="history.go(-1);">Kembali</button>
-          </td>
-        </tr>
-      </tbody>
+      <tr>
+                <td>NO : </td>
+                <td><input type="text" name="No" maxlength="11" value="<?php echo $data['No']?>" readonly=""></td>
+            </tr>
+      <tr>
+                <td>NIP : </td>
+                <td><input type="text" name="NIP" maxlength="11" value="<?php echo $data['NIP']?>" readonly=""></td>
+            </tr>
+            <tr>
+            <td>Kehadiran : </td>
+<td>
+  <select name="absen">
+    <option value="Hadir" <?php if ($data['absen'] == "Hadir") echo "selected"; ?>>Hadir</option>
+    <option value="Izin" <?php if ($data['absen'] == "Izin") echo "selected"; ?>>Izin</option>
+    <option value="Sakit" <?php if ($data['absen'] == "Sakit") echo "selected"; ?>>Sakit</option>
+  </select>
+</td>
+            </tr>
+            <tr>
+                <td>Ket : </td>
+                <td><input type="text" name="Ket" maxlength="100" value="<?php echo $data['Ket']?>"></td>
+    </tr>
+            <tr>
+                <td><input class="button-simpan" type="submit" value="Ubah"></td>
+                <td><input class="button-kembali" type="button" value="Kembali" onclick="history.go(-1);"></td>
+            </tr>
     </table>
-  </form>
-
-  <script>
-    function changeNIP(ev) {
-      location.href = '?NIP=' + ev.value
+    </form>
+    <?php
     }
-  </script>
+}
+    ?>
+
 </body>
 </html>
