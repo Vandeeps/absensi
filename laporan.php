@@ -58,8 +58,9 @@
 
   table {
     border-collapse: collapse;
-    width: 80%;
+    width: 100%;
     border: 1px solid #ccc;
+    margin-left:135px;
 
   }
 
@@ -82,7 +83,7 @@
 </style>
   <h2 class="judulor" align="center">TABEL DATA LAPORAN KERJA</h2>
       <div>
-        <table border="1" align="right" bgcolor="gray">
+        <table border="1" bgcolor="gray">
             <thead bgcolor="gray">
                   <tr>
                       <th>Nomor Laporan</th>

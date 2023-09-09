@@ -41,7 +41,7 @@ body {
 }
 
 .li-navbar:hover {
-    background-color: purple;
+    background-color: gray;
     transition: .4s ease-in-out;
     transition-delay: .2s;
     border-radius: 8px;
