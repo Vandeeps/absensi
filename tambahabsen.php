@@ -169,10 +169,6 @@ $data = mysqli_fetch_assoc(mysqli_query($koneksi, "select * from data_karyawan w
     
       <tbody>
         <tr>
-          <td>No</td>
-          <td><input type="text" name="No"></td>
-        </tr>
-        <tr>
             <td>NIP</td>
             <td><select name="NIP" onchange="changeNIP(this)">
                 <option>--PILIH--</option>
