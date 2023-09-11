@@ -10,6 +10,6 @@ if ($tampil == false) :
     location.href='tambahlaporan.php';</script>";
 else :
     echo "<script>alert('Berhasil Input');
-    location.href='laporan.php';</script>";
+    location.href='index.php';</script>";
 endif;
 ?>

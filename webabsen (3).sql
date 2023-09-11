@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 07, 2023 at 04:50 AM
+-- Generation Time: Sep 11, 2023 at 06:15 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -39,13 +39,9 @@ CREATE TABLE `data_karyawan` (
 --
 
 INSERT INTO `data_karyawan` (`NIP`, `nama`, `alamat`, `hp`) VALUES
-('1', 'Linggarius', 'Sundai', '088928398923'),
-('2', 'Kris', 'Sundai', '083984918923'),
-('3', 'Julian', 'Pluto', '218829919283'),
-('4', 'Iqball', 'Kuin Utara', '09899128319'),
-('5', 'Andria', 'Kampung Melayu', '08997391798231'),
-('6', 'Tomi', 'Sultan Adam', '09787819293192'),
-('7', 'Ridwan', 'Kmpg Melayu', '091021239123');
+('1', 'Zefanya', 'Sultan Adam', '09787819293192'),
+('2', 'Tomi', 'Sultan Adam', '091089102931'),
+('3', 'Genezareto Katje P.G', 'Kmpg Melayu', '089513881292');
 
 -- --------------------------------------------------------
 
@@ -56,9 +52,18 @@ INSERT INTO `data_karyawan` (`NIP`, `nama`, `alamat`, `hp`) VALUES
 CREATE TABLE `lap_keg` (
   `Id_lap` int(11) NOT NULL,
   `NIP` varchar(100) NOT NULL,
-  `tgl` date NOT NULL,
+  `laporan` varchar(100) NOT NULL,
   `ket` enum('Selesai','Proses','Belum') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `lap_keg`
+--
+
+INSERT INTO `lap_keg` (`Id_lap`, `NIP`, `laporan`, `ket`) VALUES
+(1, '1', 'Push Rank Mythic 2000', 'Proses'),
+(2, '2', 'Project Web Kerja', 'Selesai'),
+(3, '3', 'Tetamu Abah', 'Proses');
 
 -- --------------------------------------------------------
 
@@ -69,16 +74,16 @@ CREATE TABLE `lap_keg` (
 CREATE TABLE `login` (
   `id_login` int(11) NOT NULL,
   `user` varchar(255) NOT NULL,
-  `pass` char(32) NOT NULL,
-  `id_member` int(11) NOT NULL
+  `pass` char(32) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `login`
 --
 
-INSERT INTO `login` (`id_login`, `user`, `pass`, `id_member`) VALUES
-(1, 'Zeff', 'mamah', 1);
+INSERT INTO `login` (`id_login`, `user`, `pass`) VALUES
+(1, 'Zeff', 'mamah'),
+(2, 'user', 'user');
 
 -- --------------------------------------------------------
 
@@ -87,12 +92,20 @@ INSERT INTO `login` (`id_login`, `user`, `pass`, `id_member`) VALUES
 --
 
 CREATE TABLE `tb_absen` (
-  `No` varchar(10) NOT NULL,
+  `No` int(10) NOT NULL,
   `NIP` varchar(16) NOT NULL,
   `absen` enum('Hadir','Sakit','Izin') NOT NULL,
-  `Ket` varchar(100) NOT NULL,
-  `tgl` date NOT NULL
+  `Ket` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tb_absen`
+--
+
+INSERT INTO `tb_absen` (`No`, `NIP`, `absen`, `Ket`) VALUES
+(1, '1', 'Sakit', 'DBD'),
+(2, '2', 'Izin', 'Kematian'),
+(3, '3', 'Hadir', 'Hadir');
 
 --
 -- Indexes for dumped tables
@@ -108,7 +121,8 @@ ALTER TABLE `data_karyawan`
 -- Indexes for table `lap_keg`
 --
 ALTER TABLE `lap_keg`
-  ADD PRIMARY KEY (`Id_lap`);
+  ADD PRIMARY KEY (`Id_lap`),
+  ADD KEY `NIP` (`NIP`);
 
 --
 -- Indexes for table `login`
@@ -131,7 +145,29 @@ ALTER TABLE `tb_absen`
 -- AUTO_INCREMENT for table `login`
 --
 ALTER TABLE `login`
-  MODIFY `id_login` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_login` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `tb_absen`
+--
+ALTER TABLE `tb_absen`
+  MODIFY `No` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `lap_keg`
+--
+ALTER TABLE `lap_keg`
+  ADD CONSTRAINT `lap_keg_ibfk_1` FOREIGN KEY (`NIP`) REFERENCES `data_karyawan` (`NIP`);
+
+--
+-- Constraints for table `tb_absen`
+--
+ALTER TABLE `tb_absen`
+  ADD CONSTRAINT `tb_absen_ibfk_1` FOREIGN KEY (`NIP`) REFERENCES `data_karyawan` (`NIP`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
