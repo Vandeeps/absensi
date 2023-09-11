@@ -88,12 +88,10 @@
                   <tr>
                       <th>NIP</th>
                       <th>NAMA PEGAWAI</th>
-                      <th>NOMOR KEHADIRAN</th>
                       <th>KEHADIRAN</th>
                       <th>KETERANGAN KEHADIRAN</th>
                       <th>ALAMAT</th>
                       <th>HP</th>
-                      <th>NOMOR LAPORAN</th>
                       <th>LAPORAN</th>
                       <th>KETERANGAN LAPORAN</th>
                   </tr>
@@ -101,8 +99,8 @@
             <tbody bgcolor="gray" style="text-align: center; width=80% color:white;">
                   <?php
                   include "koneksi.php";
-                  $tampil = mysqli_query($koneksi, "SELECT data_karyawan.nip, data_karyawan.nama, tb_absen.No, tb_absen.absen,
-                  tb_absen.Ket, data_karyawan.alamat, data_karyawan.hp, lap_keg.id_lap, lap_keg.laporan, lap_keg.ket
+                  $tampil = mysqli_query($koneksi, "SELECT data_karyawan.nip, data_karyawan.nama, tb_absen.absen,
+                  tb_absen.Ket, data_karyawan.alamat, data_karyawan.hp, lap_keg.laporan, lap_keg.ket
                   FROM data_karyawan INNER JOIN tb_absen ON data_karyawan.NIP = tb_absen.NIP 
                                       INNER JOIN lap_keg ON data_karyawan.NIP = lap_keg.NIP");
                   while ($row = mysqli_fetch_array($tampil)) {
@@ -115,8 +113,6 @@
                       <td>" . $row[5] . "</td>
                       <td>" . $row[6] . "</td>
                       <td>" . $row[7] . "</td>
-                      <td>" . $row[8] . "</td>
-                      <td>" . $row[9] . "</td>
 
                   </tr>";
                   }
