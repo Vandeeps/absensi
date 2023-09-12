@@ -17,6 +17,8 @@ body {
     position: fixed; /* Tetapkan posisi tetap agar tetap terlihat saat di-scroll */
     top: 0;
     left: 0;
+    border-style: double;
+    border-color:#555;
 }
 
 .ul-navbar {
@@ -39,7 +41,7 @@ body {
 }
 
 .li-navbar:hover {
-    background-color: purple;
+    background-color: gray;
     transition: .4s ease-in-out;
     transition-delay: .2s;
     border-radius: 8px;
@@ -62,8 +64,9 @@ body {
     padding: 20px;
 }
 .judul {
-    text-align: center; /* Tengahkan judul */
-   
+    text-align: center;
+    border-color:#555;
+    border-style: double;
     font-size: 40px; /* Ukuran font judul */
     background-color: #333;
     color: aliceblue;
@@ -71,10 +74,20 @@ body {
 }
 .semijudul {
     text-align: center; /* Tengahkan judul */
-   
-    font-size: 20px; /* Ukuran font judul */
-    background-color: #333;
-    color: aliceblue;
+    color:aliceblue;  
+   margin-bottom: 50px;
+    font-size: 20px; 
+    
+}
+
+.judulor{
+    text-align: center; /* Tengahkan judul */
+    color:aliceblue;
+    margin-right: 10px;
+    font-size: 20px; 
+    margin-top: 20px;
+    background-color: gray;
+
 }
 
 tBody{
@@ -105,3 +118,37 @@ tBody{
 #butViewDelete:hover {
     background-color: lightcoral;
 }
+
+/* Tombol Simpan */
+.button-simpan {
+    background-color: #4CAF50; /* Warna latar belakang */
+    color: white; /* Warna teks */
+    padding: 10px 20px; /* Padding atas-bawah dan kiri-kanan */
+    border: none; /* Tanpa garis pinggir */
+    border-radius: 5px; /* Sudut melengkung */
+    cursor: pointer; /* Kursor pointer saat dihover */
+    font-size: 16px; /* Ukuran font */
+  }
+  
+  .button-simpan:hover {
+    background-color: #45a049; /* Warna latar belakang saat dihover */
+  }
+  
+  /* Tombol Kembali */
+  .button-kembali {
+    background-color: red; /* Warna latar belakang */
+    color: white; /* Warna teks */
+    padding: 10px 20px; /* Padding atas-bawah dan kiri-kanan */
+    border: none; /* Tanpa garis pinggir */
+    border-radius: 5px; /* Sudut melengkung */
+    cursor: pointer; /* Kursor pointer saat dihover */
+    font-size: 16px; /* Ukuran font */
+  }
+  
+  .button-kembali:hover {
+    background-color: darkred; /* Warna latar belakang saat dihover */
+  }
+  .tableform {
+    width: 100%;
+  }
+  
