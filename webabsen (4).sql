@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 11, 2023 at 06:15 AM
+-- Generation Time: Sep 13, 2023 at 10:07 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -39,9 +39,12 @@ CREATE TABLE `data_karyawan` (
 --
 
 INSERT INTO `data_karyawan` (`NIP`, `nama`, `alamat`, `hp`) VALUES
-('1', 'Zefanya', 'Sultan Adam', '09787819293192'),
+('1', 'Zefanya', 'Purnama Permai', '09787819293192'),
 ('2', 'Tomi', 'Sultan Adam', '091089102931'),
-('3', 'Genezareto Katje P.G', 'Kmpg Melayu', '089513881292');
+('3', 'Genezareto Katje P.G', 'Kmpg Melayu', '089513881292'),
+('4', 'Ahmadi', 'Kampung Ujung', '0898192831923'),
+('5', 'Ibu Ning', 'Sundai', '089619312312'),
+('6', 'Zono', 'Pangeran', '08951123123');
 
 -- --------------------------------------------------------
 
@@ -61,9 +64,11 @@ CREATE TABLE `lap_keg` (
 --
 
 INSERT INTO `lap_keg` (`Id_lap`, `NIP`, `laporan`, `ket`) VALUES
-(1, '1', 'Push Rank Mythic 2000', 'Proses'),
+(1, '1', 'Membuat Project Android', 'Proses'),
 (2, '2', 'Project Web Kerja', 'Selesai'),
-(3, '3', 'Tetamu Abah', 'Proses');
+(4, '4', 'Sakit', 'Selesai'),
+(5, '5', 'Web', 'Belum'),
+(6, '6', 'Menyembuhkan Diri', 'Proses');
 
 -- --------------------------------------------------------
 
@@ -103,9 +108,12 @@ CREATE TABLE `tb_absen` (
 --
 
 INSERT INTO `tb_absen` (`No`, `NIP`, `absen`, `Ket`) VALUES
-(1, '1', 'Sakit', 'DBD'),
+(1, '1', 'Sakit', 'Demam Berdarah'),
 (2, '2', 'Izin', 'Kematian'),
-(3, '3', 'Hadir', 'Hadir');
+(3, '3', 'Hadir', 'Hadir'),
+(4, '4', 'Sakit', 'Sariawan'),
+(5, '5', 'Izin', 'Kondangan'),
+(6, '6', 'Sakit', 'Covid -2912');
 
 --
 -- Indexes for dumped tables
@@ -151,7 +159,7 @@ ALTER TABLE `login`
 -- AUTO_INCREMENT for table `tb_absen`
 --
 ALTER TABLE `tb_absen`
-  MODIFY `No` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `No` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- Constraints for dumped tables
