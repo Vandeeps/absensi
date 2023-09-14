@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 13, 2023 at 10:07 AM
+-- Generation Time: Sep 14, 2023 at 06:56 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -44,7 +44,8 @@ INSERT INTO `data_karyawan` (`NIP`, `nama`, `alamat`, `hp`) VALUES
 ('3', 'Genezareto Katje P.G', 'Kmpg Melayu', '089513881292'),
 ('4', 'Ahmadi', 'Kampung Ujung', '0898192831923'),
 ('5', 'Ibu Ning', 'Sundai', '089619312312'),
-('6', 'Zono', 'Pangeran', '08951123123');
+('6', 'Zono', 'Pangeran', '08951123123'),
+('8', 'Ferdi', 'Herlina Perkasa', '089541129212');
 
 -- --------------------------------------------------------
 
@@ -64,11 +65,7 @@ CREATE TABLE `lap_keg` (
 --
 
 INSERT INTO `lap_keg` (`Id_lap`, `NIP`, `laporan`, `ket`) VALUES
-(1, '1', 'Membuat Project Android', 'Proses'),
-(2, '2', 'Project Web Kerja', 'Selesai'),
-(4, '4', 'Sakit', 'Selesai'),
-(5, '5', 'Web', 'Belum'),
-(6, '6', 'Menyembuhkan Diri', 'Proses');
+(1, '1', 'Project Web Absen', 'Selesai');
 
 -- --------------------------------------------------------
 
@@ -100,6 +97,7 @@ CREATE TABLE `tb_absen` (
   `No` int(10) NOT NULL,
   `NIP` varchar(16) NOT NULL,
   `absen` enum('Hadir','Sakit','Izin') NOT NULL,
+  `tgl` date NOT NULL,
   `Ket` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -107,13 +105,11 @@ CREATE TABLE `tb_absen` (
 -- Dumping data for table `tb_absen`
 --
 
-INSERT INTO `tb_absen` (`No`, `NIP`, `absen`, `Ket`) VALUES
-(1, '1', 'Sakit', 'Demam Berdarah'),
-(2, '2', 'Izin', 'Kematian'),
-(3, '3', 'Hadir', 'Hadir'),
-(4, '4', 'Sakit', 'Sariawan'),
-(5, '5', 'Izin', 'Kondangan'),
-(6, '6', 'Sakit', 'Covid -2912');
+INSERT INTO `tb_absen` (`No`, `NIP`, `absen`, `tgl`, `Ket`) VALUES
+(1, '1', 'Izin', '2023-11-12', 'Ultah'),
+(3, '2', 'Hadir', '2023-10-09', ''),
+(6, '4', 'Hadir', '2023-10-09', 'Yes'),
+(7, '5', 'Sakit', '2023-10-09', 'Demam');
 
 --
 -- Indexes for dumped tables
@@ -159,7 +155,7 @@ ALTER TABLE `login`
 -- AUTO_INCREMENT for table `tb_absen`
 --
 ALTER TABLE `tb_absen`
-  MODIFY `No` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `No` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- Constraints for dumped tables

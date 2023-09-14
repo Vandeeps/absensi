@@ -8,6 +8,10 @@
     <link rel="stylesheet" href="style1.css" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
   <link rel="icon" type="image/png" href="icon.jpg">
   <style>
  body {
@@ -24,7 +28,9 @@
 </a>
 <nav class="navbar navbar-dark bg-dark fixed-top">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Form Data Daftar Hadir</a>
+    <a class="navbar-brand" href="index.php">Form Data Daftar Hadir</a>
+    <li><a class="navbar-brand" href="tambahabsen.php">Daftar Hadir</a></li>
+    <li><a class="navbar-brand" href="tambahlaporan.php">Laporan Kerja</a></li> 
     <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -53,8 +59,6 @@
             </a>
             <ul class="dropdown-menu dropdown-menu-dark">
               <li><a class="dropdown-item" href="tambahpegawai.php">Masukan Data Pegawai</a></li>
-              <li><a class="dropdown-item" href="tambahabsen.php">Isi Daftar Hadir</a></li>
-              <li><a class="dropdown-item" href="tambahlaporan.php">Masukan Laporan Kerja</a></li>
 
             </ul>
           </li>
@@ -71,10 +75,8 @@
       margin: 0 auto;  
       margin-top:20px;    
       padding: 125px;
-      border: 1px solid #ccc;
-      background-color: #333;
-      border-radius: 5px;
       color:white;
+      background-image: url('mantap.png');
       
     }
     table {
@@ -219,6 +221,10 @@ $data = mysqli_fetch_assoc(mysqli_query($koneksi, "select * from data_karyawan w
             </td>
         </tr>
         <tr>
+          <td>Tanggal</td>
+          <td><input type="text" name="tgl" id="tanggal"></td>
+        </tr>
+        <tr>
           <td>Keterangan</td>
           <td><input type="text" name="Ket"></td>
         </tr>
@@ -236,7 +242,16 @@ $data = mysqli_fetch_assoc(mysqli_query($koneksi, "select * from data_karyawan w
     function changeNIP(ev) {
       location.href = '?NIP=' + ev.value
     }
+  $(function() {
+    $( "#tanggal" ).datepicker({
+      dateformat : "yy/mm/dd",
+      dateMonth : true,
+      dateYear : true   
+    });
+  } );
   </script>
+  <style>
+  </style>
   <footer>
 		<div class="jumbotron jumbotron-fluid bg-secondary p-4 mt-5 mb-0">
 			<div class="container">

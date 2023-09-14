@@ -24,7 +24,9 @@
 </a>
 <nav class="navbar navbar-dark bg-dark fixed-top">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Form Data Pegawai</a>
+    <a class="navbar-brand" href="index.php">Form Data Pegawai</a>
+    <li><a class="navbar-brand" href="tambahabsen.php">Daftar Hadir</a></li>
+    <li><a class="navbar-brand" href="tambahlaporan.php">Laporan Kerja</a></li>
     <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -53,8 +55,6 @@
             </a>
             <ul class="dropdown-menu dropdown-menu-dark">
               <li><a class="dropdown-item" href="tambahpegawai.php">Masukan Data Pegawai</a></li>
-              <li><a class="dropdown-item" href="tambahabsen.php">Isi Daftar Hadir</a></li>
-              <li><a class="dropdown-item" href="tambahlaporan.php">Masukan Laporan Kerja</a></li>
 
             </ul>
           </li>
@@ -71,10 +71,8 @@
       margin: 0 auto;  
       margin-top:20px;    
       padding: 125px;
-      border: 1px solid #ccc;
-      background-color: #333;
-      border-radius: 5px;
       color:white;
+      background-image: url('mantap.png');
       
     }
 

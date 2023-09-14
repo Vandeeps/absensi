@@ -15,7 +15,13 @@
       background-size:cover;
       background-position: center;
       background-repeat: repeat;
+    } .navbar-brand{
+      width: 990px;
+
+
     }
+
+    
     </style>
 </head>
 <body>
@@ -24,7 +30,11 @@
 </a>
 <nav class="navbar navbar-dark bg-dark fixed-top">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Data Laporan Kerja</a>
+    <a class="navbar-brand" href="index.php">Sistem Data Pegawai Serta Daftar Hadir dan Laporan</a>
+    <div>
+    <a class="navbar-brand" href="tambahabsen.php"> Daftar Hadir </a>
+    <a class="navbar-brand" href="tambahlaporan.php"> Laporan Kerja </a>
+    </div>
     <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -53,9 +63,7 @@
             </a>
             <ul class="dropdown-menu dropdown-menu-dark">
               <li><a class="dropdown-item" href="tambahpegawai.php">Masukan Data Pegawai</a></li>
-              <li><a class="dropdown-item" href="tambahabsen.php">Isi Daftar Hadir</a></li>
-              <li><a class="dropdown-item" href="tambahlaporan.php">Masukan Laporan Kerja</a></li>
-
+              
             </ul>
           </li>
         </ul>
@@ -81,7 +89,7 @@
                       <th>Nomor Laporan</th>
                       <th>NIP</th>
                       <th>NAMA PEGAWAI</th>
-                      <th>Nomor Telepon</th>
+                      <th>NOMOR TELEPON</th>
                       <th>LAPORAN KERJA</th>
                       <th>KETERANGAN</th>
                       <th colspan="2">AKSI</th>

@@ -16,6 +16,13 @@
       background-position: center;
       background-repeat: repeat;
     }
+    .navbar-brand{
+      width: 990px;
+
+
+    }
+
+    
     </style>
 </head>
 <body>
@@ -24,7 +31,11 @@
 </a>
 <nav class="navbar navbar-dark bg-dark fixed-top">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Sistem Data Pegawai Serta Daftar Hadir dan Laporan</a>
+    <a class="navbar-brand" href="index.php">Sistem Data Pegawai Serta Daftar Hadir dan Laporan</a>
+    <div>
+    <a class="navbar-brand" href="tambahabsen.php"> Daftar Hadir </a>
+    <a class="navbar-brand" href="tambahlaporan.php"> Laporan Kerja </a>
+    </div>
     <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -53,8 +64,6 @@
             </a>
             <ul class="dropdown-menu dropdown-menu-dark">
               <li><a class="dropdown-item" href="tambahpegawai.php">Masukan Data Pegawai</a></li>
-              <li><a class="dropdown-item" href="tambahabsen.php">Isi Daftar Hadir</a></li>
-              <li><a class="dropdown-item" href="tambahlaporan.php">Masukan Laporan Kerja</a></li>
 
             </ul>
           </li>
@@ -83,6 +92,7 @@
                       <th>NAMA PEGAWAI</th>
                       <th>KEHADIRAN</th>
                       <th>KETERANGAN KEHADIRAN</th>
+                      <th>TANGGAL </th>
                       <th>ALAMAT</th>
                       <th>HP</th>
                       <th>LAPORAN</th>
@@ -93,7 +103,7 @@
                   <?php
                   include "koneksi.php";
                   $tampil = mysqli_query($koneksi, "SELECT data_karyawan.nip, data_karyawan.nama, tb_absen.absen,
-                  tb_absen.Ket, data_karyawan.alamat, data_karyawan.hp, lap_keg.laporan, lap_keg.ket
+                  tb_absen.Ket,tb_absen.tgl, data_karyawan.alamat, data_karyawan.hp, lap_keg.laporan, lap_keg.ket
                   FROM data_karyawan INNER JOIN tb_absen ON data_karyawan.NIP = tb_absen.NIP 
                                       INNER JOIN lap_keg ON data_karyawan.NIP = lap_keg.NIP");
                   while ($row = mysqli_fetch_array($tampil)) {
@@ -106,6 +116,7 @@
                       <td>" . $row[5] . "</td>
                       <td>" . $row[6] . "</td>
                       <td>" . $row[7] . "</td>
+                      <td>" . $row[8] . "</td>
 
                   </tr>";
                   }

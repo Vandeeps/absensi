@@ -15,7 +15,13 @@
       background-size:cover;
       background-position: center;
       background-repeat: repeat;
+    } .navbar-brand{
+      width: 990px;
+
+
     }
+
+    
     </style>
 </head>
 <body>
@@ -24,7 +30,11 @@
 </a>
 <nav class="navbar navbar-dark bg-dark fixed-top">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Data Daftar Hadir</a>
+    <a class="navbar-brand" href="index.php">Data Kehadiran Pegawai</a>
+    <div>
+    <a class="navbar-brand" href="tambahabsen.php"> Daftar Hadir </a>
+    <a class="navbar-brand" href="tambahlaporan.php"> Laporan Kerja </a>
+    </div>
     <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -53,9 +63,7 @@
             </a>
             <ul class="dropdown-menu dropdown-menu-dark">
               <li><a class="dropdown-item" href="tambahpegawai.php">Masukan Data Pegawai</a></li>
-              <li><a class="dropdown-item" href="tambahabsen.php">Isi Daftar Hadir</a></li>
-              <li><a class="dropdown-item" href="tambahlaporan.php">Masukan Laporan Kerja</a></li>
-
+             
             </ul>
           </li>
         </ul>
@@ -84,6 +92,7 @@
                       <th>NAMA PEGAWAI</th>
                       <th>NOMOR TELEPON</th>
                       <th>KEHADIRAN</th>
+                      <th>TANGGAL</th>                     
                       <th>KETERANGAN</th>
                       <th colspan="2">AKSI</th>
                   </tr>
@@ -92,7 +101,7 @@
                   <?php
                   include "koneksi.php";
                   $tampil = mysqli_query($koneksi, "SELECT tb_absen.No, data_karyawan.NIP, data_karyawan.nama, data_karyawan.hp, tb_absen.absen,
-                  tb_absen.ket FROM tb_absen INNER JOIN data_karyawan ON tb_absen.NIP = data_karyawan.NIP");
+                  tb_absen.tgl,tb_absen.ket FROM tb_absen INNER JOIN data_karyawan ON tb_absen.NIP = data_karyawan.NIP");
                   while ($row = mysqli_fetch_array($tampil)) {
                       echo "<tr>
                       <td>" . $row[0] . "</td>
@@ -101,6 +110,7 @@
                       <td>" . $row[3] . "</td>
                       <td>" . $row[4] . "</td>
                       <td>" . $row[5] . "</td>
+                      <td>" . $row[6] . "</td>
                       <td bgcolor='gray'>
                       <a href='editabsen.php?No=" . $row[0] . "' id='butViewEdit'>Ubah</a>
                       <a href='DeleteAbsen.php?No=" . $row[0] . "' id='butViewDelete'>Hapus</a>

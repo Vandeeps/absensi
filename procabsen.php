@@ -1,10 +1,16 @@
 <?php
+
+include('function_tgl.php');
+
 include "koneksi.php";
 $id = $_POST['No'];
 $nnama = addslashes($_POST['NIP']);
 $mmerek = $_POST['absen'];
+$tanggal = $_POST['tgl']; 
+$tanggalhadir = Inputtgl($tanggal);
 $ket = $_POST['Ket'];
-$tampil = mysqli_query($koneksi, "INSERT INTO tb_absen VALUES('$id', '$nnama', '$mmerek', '$ket')");
+$sql = "INSERT INTO tb_absen VALUES('$id', '$nnama', '$mmerek','$tanggalhadir', '$ket')";
+$tampil = mysqli_query($koneksi,$sql);
 if ($tampil == false) :
     echo "<script>alert('Gagal Input');
     location.href='tambahabsen.php';</script>";
