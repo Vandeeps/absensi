@@ -244,10 +244,10 @@ $data = mysqli_fetch_assoc(mysqli_query($koneksi, "select * from data_karyawan w
     }
   $(function() {
     $( "#tanggal" ).datepicker({
-      dateformat : "yy/mm/dd",
+      dateformat : "yy-mm-dd",
       dateMonth : true,
       dateYear : true   
-    });
+}).datepicker('setDate','0');
   } );
   </script>
   <style>
