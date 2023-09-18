@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 14, 2023 at 06:56 AM
+-- Generation Time: Sep 18, 2023 at 06:14 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -65,7 +65,11 @@ CREATE TABLE `lap_keg` (
 --
 
 INSERT INTO `lap_keg` (`Id_lap`, `NIP`, `laporan`, `ket`) VALUES
-(1, '1', 'Project Web Absen', 'Selesai');
+(1, '1', 'Project Web Java', 'Selesai'),
+(2, '2', 'Push Rank Mythic 2000', 'Selesai'),
+(3, '3', 'Project Web Kerja', 'Proses'),
+(4, '4', 'Project Web Kerja', 'Selesai'),
+(5, '5', '', 'Selesai');
 
 -- --------------------------------------------------------
 
@@ -97,7 +101,7 @@ CREATE TABLE `tb_absen` (
   `No` int(10) NOT NULL,
   `NIP` varchar(16) NOT NULL,
   `absen` enum('Hadir','Sakit','Izin') NOT NULL,
-  `tgl` date NOT NULL,
+  `tgl` date DEFAULT NULL,
   `Ket` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -106,10 +110,11 @@ CREATE TABLE `tb_absen` (
 --
 
 INSERT INTO `tb_absen` (`No`, `NIP`, `absen`, `tgl`, `Ket`) VALUES
-(1, '1', 'Izin', '2023-11-12', 'Ultah'),
-(3, '2', 'Hadir', '2023-10-09', ''),
-(6, '4', 'Hadir', '2023-10-09', 'Yes'),
-(7, '5', 'Sakit', '2023-10-09', 'Demam');
+(1, '1', 'Izin', '2023-09-14', 'Kematian'),
+(2, '2', 'Hadir', '2023-09-14', ''),
+(3, '3', 'Hadir', '2023-09-18', ''),
+(4, '4', 'Hadir', '2023-09-18', ''),
+(5, '5', 'Izin', '2023-09-18', 'Kondangan');
 
 --
 -- Indexes for dumped tables
@@ -155,7 +160,7 @@ ALTER TABLE `login`
 -- AUTO_INCREMENT for table `tb_absen`
 --
 ALTER TABLE `tb_absen`
-  MODIFY `No` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `No` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- Constraints for dumped tables

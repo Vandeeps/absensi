@@ -71,10 +71,8 @@
       margin: 0 auto;  
       margin-top:20px;    
       padding: 125px;
-      border: 1px solid #ccc;
-      background-color: #333;
-      border-radius: 5px;
       color:white;
+      background-image: url('mantap.png');
       
     }
 
