@@ -2,7 +2,7 @@
   $title = "DAFTAR HADIR";
   include "./layouts/header.php";
 ?>
-<body>
+<body style="display: grid; gap: 1rem; padding-top: 6rem">
 <?php
   include "./layouts/navbar.php";
 ?>
