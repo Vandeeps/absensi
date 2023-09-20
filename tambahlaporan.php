@@ -20,12 +20,7 @@ $data = mysqli_fetch_assoc(mysqli_query($koneksi, "select * from data_karyawan w
 
   <form action="proclaporan.php" method="post">
     <table>
-    
       <tbody>
-        <tr>
-          <td>Nomor Laporan</td>
-          <td><input type="text" name="Id_lap"></td>
-        </tr>
         <tr>
             <td>NIP</td>
             <td><select name="NIP" onchange="changeNIP(this)">

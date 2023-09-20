@@ -18,6 +18,7 @@
             $sql .= "WHERE tb_absen.tgl BETWEEN '$tanggalmulai' AND '$tanggalakhir' ";
           }
 ?>
+
 <body style="display: grid; gap: 1rem; padding-top: 6rem">
 
 <?php
@@ -43,17 +44,17 @@
   
 </script>
 <div>
+<div>
   <label >Filter Tanggal : </label>
   <input type="date" name="tanggalmulai" id="tanggalmulai" onchange="handletanggalmulai(event)" 
   value= "<?php echo $tanggalmulai ?>">
-  <label >--</label>
+  <label >---</label>
   <input type="date" name="tanggalakhir" id="tanggalakhir" onchange="handletanggalakhir(event)" 
   value= "<?php echo $tanggalakhir ?>">
   <button onclick="resetfiltertanggal()" class="btn btn-secondary">
      Reset Filter Tanggal
   </button>
 </div>
-<div>
 <table class="table table-dark table-striped-columns"  align="right" bgcolor="gray">
   <thead bgcolor="gray">
         <tr>

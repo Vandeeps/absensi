@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 18, 2023 at 06:14 AM
+-- Generation Time: Sep 20, 2023 at 05:50 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -39,13 +39,14 @@ CREATE TABLE `data_karyawan` (
 --
 
 INSERT INTO `data_karyawan` (`NIP`, `nama`, `alamat`, `hp`) VALUES
-('1', 'Zefanya', 'Purnama Permai', '09787819293192'),
-('2', 'Tomi', 'Sultan Adam', '091089102931'),
-('3', 'Genezareto Katje P.G', 'Kmpg Melayu', '089513881292'),
-('4', 'Ahmadi', 'Kampung Ujung', '0898192831923'),
-('5', 'Ibu Ning', 'Sundai', '089619312312'),
-('6', 'Zono', 'Pangeran', '08951123123'),
-('8', 'Ferdi', 'Herlina Perkasa', '089541129212');
+('22220', 'Lutfi Alfasha', 'HKSN', '0812749283123'),
+('22222', 'Linggar', 'Sungai Andai', '0891214721239'),
+('33330', 'Zefanya', 'Sungai Andai', '0895411192902'),
+('33331', 'Afdhai Rathomi', 'Sultan Adam', '0892713823912'),
+('33332', 'Genezareto', 'Sungai Andai', '0892647123821'),
+('33333', 'Zaidan', 'Sungai Miai', '0892712938123'),
+('55550', 'Andria Almadani', 'Kampung Melayu', '0812749127381'),
+('55551', 'Ferdy', 'Sungai Andai', '0819284712823');
 
 -- --------------------------------------------------------
 
@@ -65,11 +66,14 @@ CREATE TABLE `lap_keg` (
 --
 
 INSERT INTO `lap_keg` (`Id_lap`, `NIP`, `laporan`, `ket`) VALUES
-(1, '1', 'Project Web Java', 'Selesai'),
-(2, '2', 'Push Rank Mythic 2000', 'Selesai'),
-(3, '3', 'Project Web Kerja', 'Proses'),
-(4, '4', 'Project Web Kerja', 'Selesai'),
-(5, '5', '', 'Selesai');
+(1, '22220', 'Mengerjakan Project Client', 'Selesai'),
+(2, '22222', 'Sakit', 'Selesai'),
+(3, '33330', 'Project Web Kerja', 'Proses'),
+(4, '33331', 'Web Banjarmasin Pintar', 'Selesai'),
+(5, '33332', 'Izin', 'Selesai'),
+(6, '33333', 'Java Project', 'Belum'),
+(7, '55550', 'Sakit', 'Selesai'),
+(8, '55551', 'Project Android', 'Proses');
 
 -- --------------------------------------------------------
 
@@ -110,11 +114,14 @@ CREATE TABLE `tb_absen` (
 --
 
 INSERT INTO `tb_absen` (`No`, `NIP`, `absen`, `tgl`, `Ket`) VALUES
-(1, '1', 'Izin', '2023-09-14', 'Kematian'),
-(2, '2', 'Hadir', '2023-09-14', ''),
-(3, '3', 'Hadir', '2023-09-18', ''),
-(4, '4', 'Hadir', '2023-09-18', ''),
-(5, '5', 'Izin', '2023-09-18', 'Kondangan');
+(1, '22220', 'Hadir', '2023-09-02', ''),
+(2, '22222', 'Sakit', '2023-09-06', 'Demam'),
+(3, '33330', 'Hadir', '2023-09-08', ''),
+(4, '33331', 'Hadir', '2023-09-09', ''),
+(5, '33332', 'Izin', '2023-09-11', 'Nikahan'),
+(6, '33333', 'Hadir', '2023-09-13', ''),
+(7, '55550', 'Sakit', '2023-09-18', 'Tipes'),
+(8, '55551', 'Hadir', '2023-09-20', '');
 
 --
 -- Indexes for dumped tables
@@ -151,6 +158,12 @@ ALTER TABLE `tb_absen`
 --
 
 --
+-- AUTO_INCREMENT for table `lap_keg`
+--
+ALTER TABLE `lap_keg`
+  MODIFY `Id_lap` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
 -- AUTO_INCREMENT for table `login`
 --
 ALTER TABLE `login`
@@ -160,7 +173,7 @@ ALTER TABLE `login`
 -- AUTO_INCREMENT for table `tb_absen`
 --
 ALTER TABLE `tb_absen`
-  MODIFY `No` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `No` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- Constraints for dumped tables

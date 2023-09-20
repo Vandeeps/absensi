@@ -46,14 +46,14 @@
  
 label {
   font-size: 16px; 
-  margin-right: 10px; 
 }
 
 
 input[type="date"] {
-  padding: 5px; 
+  padding: 5px 5px; 
   border: 1px solid #ccc; 
   border-radius: 4px; 
+  cursor: pointer;
 }
 
 
@@ -61,7 +61,8 @@ input[type="date"] {
   background-color: #ccc; 
   color: black; 
   border: none; 
-  padding: 9px 10px; 
+  border-radius: 4px;
+  padding: 7px 5px; 
   cursor: pointer; 
 }
 
