@@ -11,10 +11,10 @@ session_start();
 
 if (mysqli_num_rows($sql) == 1){
     $_SESSION['login'] = true;
-    echo "<script>alert('Selamat Datang " . $data['user'] . ", Anda Berhasil Login!');location.href='index.php';</script>";
+    echo "<script>location.href='index.php';</script>";
 }
 else {
-    echo "<script>alert('Gagal Login!');location.href='login.php';</script>";
+    echo "<script>alert('Username Atau Password Salah!!');location.href='login.php';</script>";
 }
 
 ?>

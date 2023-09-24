@@ -17,7 +17,7 @@
 </script>
 <div>
   <label>Cari : </label>
-    <input id="cari" name="cari" type="search" placeholder="cari..." style="width: 200px; padding: 5px" 
+    <input id="cari" name="cari" type="search" placeholder="Cari NIP/Nama.." style="width: 200px; padding: 5px" 
     value="<?php echo $cari?>">
     <button class="btn btn-secondary" onclick="handlecari()" >Cari</button>
   </div>

@@ -32,7 +32,7 @@
 <table class="table table-dark table-striped-columns"  align="right" bgcolor="gray">
   <thead bgcolor="gray" align="center">
       <tr>
-          <th>Nomor Laporan</th>
+          <th>NO</th>
           <th>NIP</th>
           <th>NAMA PEGAWAI</th>
           <th>NOMOR TELEPON</th>
