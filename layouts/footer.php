@@ -8,11 +8,9 @@
 							<p class="d-inline lead">Vandeeps Corporation © 2023<br>
 							<a href="" class="text-light d-block lead"></a>
 							</p>
-	
 							</div>
 						</div>
 					</div>
-					
 					<div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 cizgi">
 						<div class="card bg-secondary border-0">
 							<div class="card-body text-center">
